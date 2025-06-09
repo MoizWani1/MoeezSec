@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 36% 12%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 170 100% 70%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 27%;
+    --input: 217 33% 17%;
+    --ring: 170 100% 70%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyber-teal to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .terminal-window {
+    @apply bg-black bg-opacity-80 rounded-lg p-4 border border-cyber-teal;
+  }
+
+  .neon-border {
+    @apply border border-cyber-teal shadow-[0_0_10px_rgba(100,255,218,0.5)];
+  }
+
+  .code-block {
+    @apply font-mono bg-black bg-opacity-70 p-4 rounded-lg;
+  }
+  
+  .matrix-bg {
+    @apply relative overflow-hidden;
+  }
+  
+  .matrix-bg::before {
+    content: "";
+    @apply absolute inset-0 bg-cyber-blue bg-opacity-30 z-[-1];
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md bg-white bg-opacity-5 border border-white border-opacity-10 rounded-xl;
+  }
+  
+  .navlink {
+    @apply relative inline-block text-cyber-slate hover:text-cyber-teal transition-colors duration-300;
+  }
+  
+  .navlink::after {
+    content: "";
+    @apply absolute left-0 bottom-[-4px] h-[2px] w-0 bg-cyber-teal transition-all duration-300;
+  }
+  
+  .navlink:hover::after {
+    @apply w-full;
+  }
+}
